@@ -20,9 +20,6 @@
     "url": "https://github.com/jinxyang/react-cli/issues"
   },
   "homepage": "https://github.com/jinxyang/react-cli#readme",
-  "publishConfig": {
-    "registry": "http://localhost:4873"
-  },
   "files": [
     "bin"
   ],
