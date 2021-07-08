@@ -6,12 +6,12 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-const { root } = require('./utils')
+const { getStyleLoader } = require('./utils')
 
 process.env.NODE_ENV = 'production'
 
-const prodConfig = (appDir, customConfig = {}) => {
-  const webpackCommonConfig = require('./webpack.common')(appDir, customConfig)
+const prodConfig = (appDir, config = {}) => {
+  const webpackCommonConfig = require('./webpack.common')(appDir, config)
 
   return merge(webpackCommonConfig, {
     mode: 'production',
@@ -36,7 +36,15 @@ const prodConfig = (appDir, customConfig = {}) => {
         },
         {
           test: /\.css$/,
-          use: [MiniCssExtractPlugin.loader, root('node_modules/css-loader')],
+          use: getStyleLoader(true),
+        },
+        {
+          test: /\.s[ac]ss$/,
+          use: getStyleLoader(true, config.sass, 'sass'),
+        },
+        {
+          test: /\.less$/,
+          use: getStyleLoader(true, config.less, 'less'),
         },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,

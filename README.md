@@ -9,7 +9,7 @@
 ### Installation
 
 ```bash
-npm i react-cli -g
+npm i @jinxyang/react-cli -g
 ```
 
 ### Basic usage
@@ -28,25 +28,82 @@ react-cli build
 
 ## Options
 
-**react-cli.config.js**
+**react-cli.config.js** (optional)
 
-- **port** - development server port
+#### development server port
+
+```javascript
+module.exports = {
+  port: 8080, // default is 3000
+}
+```
+
+#### sass (less)
+
+for now, just support [style-resources-loader](https://www.npmjs.com/package/style-resources-loader)
+
+```javascript
+const path = require('path')
+module.exports = {
+  sass: { // for /\.s[ac]ss$/
+    resources: {} // style-resources-loader's options 
+  },
+  sass: { // for /\.less$/
+    resources: {} // style-resources-loader's options
+  },
+}
+```
+
+#### development server proxy
+
+use [http-proxy-middleware](https://www.npmjs.com/package/http-proxy-middleware)
+
+```javascript
+module.exports = {
+  proxy: [
+    {
+      path: '/api',
+      options: {}, // createProxyMiddleware's options
+    },
+  ],
+}
+```
+
+#### custom splitChunks
+
+```javascript
+module.exports = {
+  splitChunks: {
+    cacheGroups: {
+      react: {
+        name: 'react',
+        priority: 10,
+        test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom)[\\/]/,
+      },
+      antd: {
+        name: 'antd',
+        priority: 10,
+        test: /[\\/]node_modules[\\/](antd|@antd-)/,
+      },
+    },
+  },
+}
+
+```
+
+****
 
 ## Feature
 
 - eslint
 - stylelint
-- splitChunks
-  - react (react, react-dom, react-router-dom)
-  - antd (antd, @ant-design/icons, @ant-design/colors)
-  - venders (others in node_modules)
+- splitChunks (default: venders - node_modules)
 - copy files (/static)
 - styled-components
+- sass & less
+- postcss (autoprefixer)
 
 ## Todos
 
-- custom splitChunks
-- sass & less
 - commitlint
 - changelog
-- development server proxy

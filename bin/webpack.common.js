@@ -2,10 +2,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const StylelintPlugin = require('stylelint-webpack-plugin')
+const { merge } = require('webpack-merge')
 
 const { root, exists, readdir } = require('./utils')
 
-const commonConfig = (appDir) => {
+const commonConfig = (appDir, config = {}) => {
   const staticDir = appDir('static')
 
   return {
@@ -44,28 +45,23 @@ const commonConfig = (appDir) => {
       new StylelintPlugin({
         context: appDir('src'),
         stylelintPath: appDir('node_modules/stylelint'),
-        extensions: ['css', 'scss', 'js', 'jsx', 'ts', 'tsx'],
+        extensions: ['css', 'less', 'sass', 'scss', 'js', 'jsx', 'ts', 'tsx'],
       }),
     ].filter(Boolean),
     optimization: {
       minimize: false,
-      splitChunks: {
-        chunks: 'all',
-        cacheGroups: {
-          react: {
-            name: 'react',
-            test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom)[\\/]/,
-          },
-          antd: {
-            name: 'antd',
-            test: /[\\/]node_modules[\\/](antd|@antd-)/,
-          },
-          vendors: {
-            name: 'vendors',
-            test: /[\\/]node_modules[\\/]/,
+      splitChunks: merge(
+        {
+          chunks: 'all',
+          cacheGroups: {
+            vendors: {
+              name: 'vendors',
+              test: /[\\/]node_modules[\\/]/,
+            },
           },
         },
-      },
+        config.splitChunks || {},
+      ),
     },
     stats: 'none',
     infrastructureLogging: {

@@ -6,6 +6,7 @@ const history = require('connect-history-api-fallback')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
 const { exists } = require('./utils')
 const defaultConfig = require('./config')
@@ -16,10 +17,15 @@ const dev = () => {
   const customConfig = exists(customConfigFile) && require(customConfigFile)
   const config = { ...defaultConfig, ...customConfig }
 
-  const webpackConfig = require('./webpack.dev')(appDir, customConfig)
+  const webpackConfig = require('./webpack.dev')(appDir, config)
   const compiler = webpack(webpackConfig)
 
   const app = express()
+  if (config.proxy) {
+    config.proxy.forEach(({ path, options }) => {
+      app.use(path, createProxyMiddleware(options))
+    })
+  }
   app.use(history())
   app.use(webpackDevMiddleware(compiler))
   app.use(
@@ -29,9 +35,7 @@ const dev = () => {
     }),
   )
 
-  console.clear()
   console.log(chalk.cyan('Starting the development server...'))
-
   app.listen(config.port)
 }
 

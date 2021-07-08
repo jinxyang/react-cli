@@ -3,14 +3,12 @@ const { merge } = require('webpack-merge')
 const FriendlyErrorsWebpackPlugin = require('@soda/friendly-errors-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
-const { root } = require('./utils')
-const defaultConfig = require('./config')
+const { root, getStyleLoader } = require('./utils')
 
 process.env.NODE_ENV = 'development'
 
-const devConfig = (appDir, customConfig = {}) => {
-  const webpackCommonConfig = require('./webpack.common')(appDir, customConfig)
-  const config = { ...defaultConfig, ...customConfig }
+const devConfig = (appDir, config = {}) => {
+  const webpackCommonConfig = require('./webpack.common')(appDir, config)
 
   return merge(webpackCommonConfig, {
     mode: 'development',
@@ -32,7 +30,13 @@ const devConfig = (appDir, customConfig = {}) => {
               options: {
                 cacheDirectory: true,
                 plugins: [
-                  ...config.babel.plugins,
+                  [
+                    root('node_modules/babel-plugin-styled-components'),
+                    {
+                      ssr: false,
+                      displayName: true,
+                    },
+                  ],
                   require('react-refresh/babel'),
                 ],
               },
@@ -41,10 +45,15 @@ const devConfig = (appDir, customConfig = {}) => {
         },
         {
           test: /\.css$/,
-          use: [
-            root('node_modules/style-loader'),
-            root('node_modules/css-loader'),
-          ],
+          use: getStyleLoader(false),
+        },
+        {
+          test: /\.scss$/,
+          use: getStyleLoader(false, config.sass, 'sass'),
+        },
+        {
+          test: /\.less$/,
+          use: getStyleLoader(false, config.less, 'less'),
         },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
