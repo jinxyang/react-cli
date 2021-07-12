@@ -2,8 +2,6 @@
 
 **project template is here: [react-cli-template](https://github.com/jinxyang/react-cli-template)**
 
-
-
 ## Getting started
 
 ### Installation
@@ -43,13 +41,14 @@ module.exports = {
 for now, just support [style-resources-loader](https://www.npmjs.com/package/style-resources-loader)
 
 ```javascript
-const path = require('path')
 module.exports = {
-  sass: { // for /\.s[ac]ss$/
-    resources: {} // style-resources-loader's options 
+  sass: {
+    // for /\.scss$/
+    resources: {}, // style-resources-loader's options
   },
-  sass: { // for /\.less$/
-    resources: {} // style-resources-loader's options
+  less: {
+    // for /\.less$/
+    resources: {}, // style-resources-loader's options
   },
 }
 ```
@@ -88,22 +87,13 @@ module.exports = {
     },
   },
 }
-
 ```
 
-****
+---
 
 ## Feature
 
-- eslint
-- stylelint
-- splitChunks (default: venders - node_modules)
-- copy files (/static)
-- styled-components
-- sass & less
+- copy files (/static to /dist)
+- styled-components & sass & less
+- css-modules (ext with .m.[ext])
 - postcss (autoprefixer)
-
-## Todos
-
-- commitlint
-- changelog

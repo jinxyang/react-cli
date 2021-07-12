@@ -37,7 +37,7 @@ exports.getStyleLoader = (isProd = false, config = {}, pre = '') => {
     loader: exports.root('node_modules/css-loader'),
     options: {
       modules: {
-        auto: (path) => !/[\\/]node_modules[\\/]/.test(path),
+        auto: /\.m\.\w+$/,
         ...(isProd
           ? {
               localIdentName: '[hash:base64:8]',
