@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/jinxyang/react-cli/compare/v0.0.2...v0.0.3) (2021-07-12)
+
+
+### Bug Fixes
+
+* css-modules:auto ([88e2092](https://github.com/jinxyang/react-cli/commit/88e20926760508ac1c2aea80b29f50aa4e6b3c87))
+
 ### 0.0.2 (2021-07-08)
 
 
