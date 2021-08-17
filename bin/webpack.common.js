@@ -26,6 +26,7 @@ const commonConfig = (appDir, config = {}) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: appDir('src/index.html'),
+        inject: 'body',
       }),
       exists(staticDir) &&
         readdir(staticDir).length &&
