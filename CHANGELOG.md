@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/jinxyang/react-cli/compare/v0.0.3...v0.0.4) (2021-08-17)
+
+
+### Bug Fixes
+
+* move entry script to the body ([ba875d6](https://github.com/jinxyang/react-cli/commit/ba875d627c30892d86c6acd5dfad35854a7a549f))
+
 ### [0.0.3](https://github.com/jinxyang/react-cli/compare/v0.0.2...v0.0.3) (2021-07-12)
 
 

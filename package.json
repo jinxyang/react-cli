@@ -1,12 +1,12 @@
 {
   "name": "@jinxyang/react-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "react-cli",
   "bin": {
     "react-cli": "bin/index.js"
   },
   "scripts": {
-    "prepublish": "standard-version"
+    "prepack": "standard-version"
   },
   "repository": {
     "type": "git",
