@@ -24,7 +24,7 @@ const prodConfig = (appDir, config = {}) => {
       rules: [
         {
           test: /\.jsx?$/,
-          include: appDir('src'),
+          include: [appDir('src'), appDir('packages')],
           use: [
             {
               loader: 'babel-loader',
