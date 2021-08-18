@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/jinxyang/react-cli/compare/v0.0.4...v0.0.5) (2021-08-18)
+
+
+### Features
+
+* babel-loader includes add packages ([8863c6b](https://github.com/jinxyang/react-cli/commit/8863c6b8dde192dbe994206b85f1fbbe73b76c19))
+
 ### [0.0.4](https://github.com/jinxyang/react-cli/compare/v0.0.3...v0.0.4) (2021-08-17)
 
 
