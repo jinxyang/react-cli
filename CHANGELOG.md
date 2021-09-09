@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/jinxyang/react-cli/compare/v0.0.5...v0.0.6) (2021-09-09)
+
+
+### Bug Fixes
+
+* change the fucking cache's type ([9d1b501](https://github.com/jinxyang/react-cli/commit/9d1b5017c60daf3e932f1531947ae16f12ffd829))
+
 ### [0.0.5](https://github.com/jinxyang/react-cli/compare/v0.0.4...v0.0.5) (2021-08-18)
 
 
