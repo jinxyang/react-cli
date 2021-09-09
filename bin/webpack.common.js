@@ -68,6 +68,9 @@ const commonConfig = (appDir, config = {}) => {
     infrastructureLogging: {
       level: 'none',
     },
+    cache: {
+      type: 'filesystem',
+    },
   }
 }
 
