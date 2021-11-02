@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/jinxyang/react-cli/compare/v0.0.6...v0.0.7) (2021-11-02)
+
+
+### Features
+
+* support env options ([06d5bee](https://github.com/jinxyang/react-cli/commit/06d5bee875d6c829ea54946e63707344216a2d27))
+
 ### [0.0.6](https://github.com/jinxyang/react-cli/compare/v0.0.5...v0.0.6) (2021-09-09)
 
 
