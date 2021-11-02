@@ -1,6 +1,6 @@
 {
   "name": "@jinxyang/react-cli",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "react-cli",
   "bin": {
     "react-cli": "bin/index.js"
