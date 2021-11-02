@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
@@ -8,6 +9,11 @@ const { root, exists, readdir } = require('./utils')
 
 const commonConfig = (appDir, config = {}) => {
   const staticDir = appDir('static')
+
+  const processEnv = config.env.reduce((acc, item) => {
+    const [key, value] = item.split(':')
+    return { ...acc, [key]: `"${value}"` }
+  }, {})
 
   return {
     entry: {
@@ -24,6 +30,9 @@ const commonConfig = (appDir, config = {}) => {
       modules: ['src', 'node_modules'],
     },
     plugins: [
+      new webpack.DefinePlugin({
+        'process.env': processEnv,
+      }),
       new HtmlWebpackPlugin({
         template: appDir('src/index.html'),
         inject: 'body',

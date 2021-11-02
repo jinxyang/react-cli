@@ -11,11 +11,15 @@ const { createProxyMiddleware } = require('http-proxy-middleware')
 const { exists } = require('./utils')
 const defaultConfig = require('./config')
 
-const dev = () => {
+const dev = (options = {}) => {
   const appDir = (target = '') => path.resolve(process.cwd(), target)
   const customConfigFile = appDir('react-cli.config.js')
   const customConfig = exists(customConfigFile) && require(customConfigFile)
-  const config = { ...defaultConfig, ...customConfig }
+  const config = {
+    ...defaultConfig,
+    ...customConfig,
+    env: [...(options.env || []), 'NODE:development'],
+  }
 
   const webpackConfig = require('./webpack.dev')(appDir, config)
   const compiler = webpack(webpackConfig)
