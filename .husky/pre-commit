@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+node /Users/jinx/Websites/github/react-cli/node_modules/lint-staged/bin/lint-staged.js --config /Users/jinx/Websites/github/react-cli/lib/config/lint-staged.js

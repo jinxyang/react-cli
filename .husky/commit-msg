@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+node /Users/jinx/Websites/github/react-cli/node_modules/@commitlint/cli/lib/cli.js --config /Users/jinx/Websites/github/react-cli/lib/config/commitlint.js --edit $1

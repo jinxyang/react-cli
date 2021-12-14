@@ -1,0 +1,29 @@
+{
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "prettier.configPath": "lib/config/prettier.js",
+  "eslint.useESLintClass": true,
+  "eslint.options": {
+    "overrideConfigFile": "lib/config/eslint.js"
+  },
+  "stylelint.configFile": "lib/config/stylelint.js",
+  "stylelint.validate": [
+    "css",
+    "less",
+    "scss",
+    "javascript",
+    "javascriptreact",
+    "markdown",
+    "html"
+  ],
+  "stylelint.snippet": [
+    "css",
+    "less",
+    "scss",
+    "javascript",
+    "javascriptreact",
+    "markdown",
+    "html"
+  ]
+}
