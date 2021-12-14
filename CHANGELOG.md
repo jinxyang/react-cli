@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/jinxyang/react-cli/compare/v0.1.0...v0.1.1) (2021-12-14)
+
+### Bug Fixes
+
+- cache & loader include & init files ([cc018d5](https://github.com/jinxyang/react-cli/commit/cc018d51ca48f2df107326b2860d8ad8ec1b9d55))
+
 ## [0.1.0](https://github.com/jinxyang/react-cli/compare/v0.0.8...v0.1.0) (2021-12-14)
 
 ### Features
