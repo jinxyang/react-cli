@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/jinxyang/react-cli/compare/v0.1.1...v0.1.2) (2021-12-15)
+
+### Bug Fixes
+
+- customSyntax files ([22f2220](https://github.com/jinxyang/react-cli/commit/22f22206acc82a5a4920e4f2d1212935504ac36b))
+- jsconfig include ([34024e1](https://github.com/jinxyang/react-cli/commit/34024e16b6b448a333beb03892cc4a006aa43eba))
+
 ### [0.1.1](https://github.com/jinxyang/react-cli/compare/v0.1.0...v0.1.1) (2021-12-14)
 
 ### Bug Fixes
