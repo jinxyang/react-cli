@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/jinxyang/react-cli/compare/v0.1.2...v0.1.3) (2021-12-16)
+
+### Features
+
+- custom libs ([0144f69](https://github.com/jinxyang/react-cli/commit/0144f691f85ecfd0b7a111295442ed34c8f39975))
+
 ### [0.1.2](https://github.com/jinxyang/react-cli/compare/v0.1.1...v0.1.2) (2021-12-15)
 
 ### Bug Fixes
