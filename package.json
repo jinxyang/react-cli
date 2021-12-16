@@ -60,6 +60,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "copy-webpack-plugin": "^9.1.0",
     "core-js": "^3.19.1",
+    "cosmiconfig": "^7.0.1",
     "css-loader": "^5.2.6",
     "css-minimizer-webpack-plugin": "^3.0.2",
     "eslint": "^7.32.0",

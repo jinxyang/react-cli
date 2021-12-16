@@ -3,14 +3,7 @@ const { Command } = require('commander')
 const pkg = require('../package')
 
 const { functionCatcher } = require('../lib/utils')
-const {
-  install,
-  update,
-  init,
-  dev,
-  build,
-  transform,
-} = require('../lib/scripts')
+const { init, dev, build, transform } = require('../lib/scripts')
 
 const envOption = [
   '-e, --env <variables...>',
@@ -20,17 +13,17 @@ const envOption = [
 const program = new Command()
 
 program.version(`${pkg.name} ${pkg.version}`, '-v, --version')
-program
-  .command('install <name>')
-  .alias('i')
-  .description('clone, eg: react-lib or git repo')
-  .option('-d, --directory <name>', 'directory for git clone')
-  .action(functionCatcher(install))
-program
-  .command('update <name>')
-  .alias('u')
-  .description('update lib')
-  .action(functionCatcher(update))
+// program
+//   .command('install <name>')
+//   .alias('i')
+//   .description('clone, eg: react-lib or git repo')
+//   .option('-d, --directory <name>', 'directory for git clone')
+//   .action(functionCatcher(install))
+// program
+//   .command('update <name>')
+//   .alias('u')
+//   .description('update lib')
+//   .action(functionCatcher(update))
 program
   .command('init')
   .description('initial project with needed files')
