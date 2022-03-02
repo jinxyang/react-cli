@@ -3,7 +3,7 @@ const { Command } = require('commander')
 const pkg = require('../package')
 
 const { functionCatcher } = require('../lib/utils')
-const { init, dev, build, transform } = require('../lib/scripts')
+const { init, dev, build, lint, transform } = require('../lib/scripts')
 
 const envOption = [
   '-e, --env <variables...>',
@@ -41,6 +41,10 @@ program
   .option(...envOption)
   .option('-c, --compress [name]')
   .action(functionCatcher(build))
+program
+  .command('lint')
+  .description('lint and format')
+  .action(functionCatcher(lint))
 program
   .command('transform')
   .description('compile with babel')
