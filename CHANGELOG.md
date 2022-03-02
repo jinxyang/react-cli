@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/jinxyang/react-cli/compare/v0.1.3...v0.1.4) (2022-03-02)
+
+### Features
+
+- add lint ([04f4b56](https://github.com/jinxyang/react-cli/commit/04f4b56a3ae0cbc0032d7a45613669ae198bce1e))
+
 ### [0.1.3](https://github.com/jinxyang/react-cli/compare/v0.1.2...v0.1.3) (2021-12-16)
 
 ### Features
