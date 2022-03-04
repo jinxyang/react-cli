@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/jinxyang/react-cli/compare/v0.1.4...v0.1.5) (2022-03-04)
+
+### Bug Fixes
+
+- webpack resolve modules ([8fc60e0](https://github.com/jinxyang/react-cli/commit/8fc60e031cbf914b0600d64a9d0127ab9e27dc52))
+
 ### [0.1.4](https://github.com/jinxyang/react-cli/compare/v0.1.3...v0.1.4) (2022-03-02)
 
 ### Features
