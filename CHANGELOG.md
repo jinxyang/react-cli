@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/jinxyang/react-cli/compare/v0.1.6...v0.1.7) (2022-07-06)
+
+### Bug Fixes
+
+- publicPath ([9d927c4](https://github.com/jinxyang/react-cli/commit/9d927c4e31011a51639aac01100d4d8419c2b886))
+
 ### [0.1.6](https://github.com/jinxyang/react-cli/compare/v0.1.5...v0.1.6) (2022-04-07)
 
 ### Features
